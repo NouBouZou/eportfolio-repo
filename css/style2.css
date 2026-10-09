@@ -1,0 +1,595 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   style2.css - feuille de style principale (CSS3)
+
+   Point de départ : style2.css du TP R109, améliorée :
+   - mise en page en flexbox à la place des float ;
+   - en-tête et pied de page qui restent visibles (position: sticky) ;
+   - couleurs et police regroupées en variables (= charte graphique) ;
+   - styles ajoutés : tableaux, figures, cartes, citation, médias, accessibilité.
+
+   Les règles adaptatives (Responsive Web Design) sont dans responsive.css.
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   Charte graphique : pour changer l'apparence du site, modifier ici
+   -------------------------------------------------------------------------- */
+:root
+{
+  --couleur-entete: #333333;        /* en-tête et pied de page */
+  --couleur-menu: #666666;          /* barre de navigation */
+  --couleur-accent: #04AA6D;        /* décor : filets, onglet actif */
+  --couleur-accent-fonce: #027A4C;  /* liens, 1er onglet (texte blanc lisible) */
+  --couleur-survol: #DDDDDD;        /* survol des liens du menu */
+  --couleur-fond: #f1f1f1;          /* fond des pages */
+  --couleur-texte: #222222;
+  --couleur-bordure: #BBBBBB;
+  --police: Arial, Helvetica, sans-serif;
+}
+
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after
+{
+  box-sizing: border-box;
+}
+
+body
+{
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--police);
+  line-height: 1.6;
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond);
+}
+
+[id]
+{
+  scroll-margin-top: 150px;   /* évite que l'en-tête masque la cible d'un lien interne */
+}
+
+a
+{
+  color: var(--couleur-accent-fonce);
+}
+
+a:hover
+{
+  color: var(--couleur-entete);
+  text-decoration: none;
+}
+
+a:focus
+{
+  outline: 3px solid #E8A200;
+  outline-offset: 2px;
+}
+
+/* Lien d'évitement : visible uniquement au clavier */
+a.evitement
+{
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 10px 16px;
+  background-color: white;
+  color: black;
+}
+
+a.evitement:focus
+{
+  left: 10px;
+  top: 10px;
+}
+
+hr.dot
+{
+  border: dotted 2px;
+  width: 80%;
+}
+
+mark
+{
+  padding: 0 0.25em;
+  color: inherit;
+  background-color: #FFF1A8;   /* repère les textes à compléter */
+}
+
+
+/* --------------------------------------------------------------------------
+   En-tête et navigation
+   -------------------------------------------------------------------------- */
+header
+{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--couleur-entete);
+  color: white;
+}
+
+h1
+{
+  text-align: center;
+}
+
+header h1
+{
+  margin: 0;
+  padding: 0 20px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+header nav ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--couleur-menu);
+}
+
+header nav ul li:first-child
+{
+  background-color: var(--couleur-accent-fonce);
+}
+
+header nav ul li
+{
+  border-right: 1px solid var(--couleur-bordure);
+}
+
+header nav ul li:last-child
+{
+  border-right: none;
+  margin-left: auto;          /* dernier onglet poussé à droite */
+}
+
+header nav ul li a
+{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+}
+
+header nav ul li a:hover:not(.first)
+{
+  background-color: var(--couleur-survol);
+  color: black;
+}
+
+header nav ul li a[aria-current="page"]
+{
+  font-weight: bold;
+  box-shadow: inset 0 -4px 0 var(--couleur-accent);   /* page en cours */
+}
+
+
+/* --------------------------------------------------------------------------
+   Contenu
+   -------------------------------------------------------------------------- */
+main
+{
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+}
+
+section
+{
+  padding-top: 35px;
+}
+
+section#first
+{
+  padding-top: 45px;
+}
+
+section#first::after
+{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Bannière de la page d'accueil */
+section#first.banniere
+{
+  margin-top: 30px;
+  padding: 30px;
+  background-color: white;
+  border-top: 5px solid var(--couleur-accent);
+  border-radius: 4px;
+}
+
+section#first.banniere h2
+{
+  font-size: 2rem;
+}
+
+h2, h3
+{
+  line-height: 1.3;
+}
+
+h2
+{
+  margin: 0 0 16px 0;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--couleur-accent);
+  font-size: 1.6rem;
+}
+
+h3
+{
+  margin: 24px 0 8px 0;
+  font-size: 1.25rem;
+  color: var(--couleur-accent-fonce);
+}
+
+p
+{
+  margin: 0 0 14px 0;
+  max-width: 46em;
+}
+
+ul, ol
+{
+  max-width: 46em;
+}
+
+dt
+{
+  font-weight: bold;
+}
+
+dd
+{
+  margin: 0 0 12px 0;
+}
+
+address
+{
+  font-style: normal;
+}
+
+pre
+{
+  padding: 14px 18px;
+  overflow-x: auto;
+  background-color: white;
+  border: 1px solid var(--couleur-bordure);
+  border-left: 4px solid var(--couleur-accent);
+  line-height: 1.4;
+}
+
+blockquote
+{
+  margin: 0;
+  padding: 14px 20px;
+  max-width: 46em;
+  background-color: white;
+  border-left: 4px solid var(--couleur-accent);
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+blockquote p
+{
+  margin: 0;
+}
+
+a.bouton
+{
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--couleur-accent-fonce);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+a.bouton:hover
+{
+  background-color: var(--couleur-entete);
+  color: white;
+}
+
+
+/* --------------------------------------------------------------------------
+   Images, figures, audio et vidéo
+   -------------------------------------------------------------------------- */
+img
+{
+  max-width: 100%;
+  height: auto;
+}
+
+figure
+{
+  margin: 20px 0;
+}
+
+figure img, figure video
+{
+  display: block;
+}
+
+figcaption
+{
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #555555;
+}
+
+figure.portrait
+{
+  float: right;
+  width: 38%;
+  margin: 0 0 16px 28px;
+}
+
+figure.plan
+{
+  float: left;
+  margin: 0 32px 16px 0;
+}
+
+video, audio
+{
+  display: block;
+  width: 100%;
+  max-width: 800px;
+}
+
+video
+{
+  background-color: black;
+}
+
+
+/* --------------------------------------------------------------------------
+   Tableaux
+   -------------------------------------------------------------------------- */
+figure.tableau
+{
+  overflow-x: auto;           /* défilement horizontal si l'écran est trop étroit */
+}
+
+table
+{
+  width: 100%;
+  min-width: 540px;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+caption
+{
+  padding-bottom: 8px;
+  text-align: left;
+  font-weight: bold;
+}
+
+th, td
+{
+  padding: 10px 12px;
+  border: 1px solid var(--couleur-bordure);
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th
+{
+  background-color: var(--couleur-menu);
+  color: white;
+}
+
+tbody th
+{
+  background-color: #E6E6E6;
+}
+
+/* Échantillons de couleur de la charte graphique */
+td.ech-entete { background-color: var(--couleur-entete); }
+td.ech-menu { background-color: var(--couleur-menu); }
+td.ech-accent { background-color: var(--couleur-accent); }
+td.ech-accent-fonce { background-color: var(--couleur-accent-fonce); }
+td.ech-survol { background-color: var(--couleur-survol); }
+td.ech-fond { background-color: var(--couleur-fond); }
+td.ech-texte { background-color: var(--couleur-texte); }
+td.ech-bordure { background-color: var(--couleur-bordure); }
+
+
+/* --------------------------------------------------------------------------
+   Cartes (liste d'articles), étiquettes, sommaire, schémas filaires
+   -------------------------------------------------------------------------- */
+.cartes
+{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  list-style-type: none;
+}
+
+.cartes > li
+{
+  display: flex;
+  width: 31.333%;
+  margin: 0 3% 20px 0;
+}
+
+.cartes > li:nth-child(3n)
+{
+  margin-right: 0;
+}
+
+.cartes article
+{
+  flex: 1;
+  padding: 16px;
+  background-color: white;
+  border: 1px solid var(--couleur-bordure);
+  border-top: 4px solid var(--couleur-accent);
+  border-radius: 4px;
+}
+
+.cartes article h3
+{
+  margin-top: 0;
+}
+
+.cartes article figure
+{
+  margin-top: 0;
+}
+
+nav.sommaire
+{
+  max-width: 46em;
+  padding: 12px 20px;
+  background-color: white;
+  border: 1px solid var(--couleur-bordure);
+  border-left: 4px solid var(--couleur-accent);
+}
+
+nav.sommaire ol
+{
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.filaires
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  list-style-type: none;
+}
+
+.filaires > li
+{
+  max-width: 100%;
+}
+
+.filaires figure
+{
+  margin: 0;
+}
+
+
+/* --------------------------------------------------------------------------
+   Badges de validation W3C (aside#last)
+   -------------------------------------------------------------------------- */
+aside#last
+{
+  margin-top: 40px;
+  padding: 20px 0 10px 0;
+  border-top: 2px dotted var(--couleur-bordure);
+}
+
+aside#last h2
+{
+  margin: 0 0 8px 0;
+  padding: 0;
+  border-bottom: none;
+  font-size: 1rem;
+}
+
+aside#last p
+{
+  margin-bottom: 0;
+}
+
+aside a
+{
+  text-decoration: none;
+}
+
+aside img
+{
+  border: 0;
+  width: 88px;
+  height: 31px;
+  vertical-align: middle;
+}
+
+
+/* --------------------------------------------------------------------------
+   Pied de page
+   -------------------------------------------------------------------------- */
+footer
+{
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  padding: 12px 20px;
+  background-color: var(--couleur-entete);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer ul
+{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  list-style-type: none;
+}
+
+footer ul li
+{
+  width: 33%;
+  list-style-type: none;
+}
+
+footer ul li:first-child
+{
+  text-align: left;
+}
+
+footer ul li:last-child
+{
+  text-align: right;
+}
+
+footer a
+{
+  color: white;
+}
+
+footer a:hover
+{
+  background-color: var(--couleur-survol);
+  color: black;
+}

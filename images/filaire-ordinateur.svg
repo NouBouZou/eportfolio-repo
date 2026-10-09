@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 370 326" width="370" height="326">
+  <title>Structure filaire d'une page sur ordinateur</title>
+  <rect x="0.5" y="0.5" width="369" height="325" fill="#F1F1F1" stroke="#333333"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle">
+    <!-- header -->
+    <rect x="0" y="0" width="370" height="40" fill="#333333"/>
+    <text x="185" y="25" fill="#FFFFFF">header · h1</text>
+    <!-- nav -->
+    <rect x="0" y="40" width="370" height="24" fill="#666666"/>
+    <rect x="0" y="40" width="64" height="24" fill="#027A4C"/>
+    <text x="217" y="56" fill="#FFFFFF">nav · ul &gt; li (une seule ligne)</text>
+    <!-- section -->
+    <rect x="14" y="78" width="342" height="64" fill="#FFFFFF" stroke="#999999"/>
+    <text x="185" y="106" font-weight="bold" fill="#222222">section#first</text>
+    <text x="185" y="124" fill="#222222">h2 + p + figure</text>
+    <!-- articles -->
+    <rect x="14" y="156" width="104" height="70" fill="#FFFFFF" stroke="#999999"/>
+    <rect x="133" y="156" width="104" height="70" fill="#FFFFFF" stroke="#999999"/>
+    <rect x="252" y="156" width="104" height="70" fill="#FFFFFF" stroke="#999999"/>
+    <text x="66" y="196" fill="#222222">article</text>
+    <text x="185" y="196" fill="#222222">article</text>
+    <text x="304" y="196" fill="#222222">article</text>
+    <!-- aside -->
+    <rect x="14" y="240" width="342" height="28" fill="#FFFFFF" stroke="#999999" stroke-dasharray="4 3"/>
+    <text x="185" y="258" fill="#222222">aside#last · badges W3C</text>
+    <!-- footer -->
+    <rect x="0" y="284" width="370" height="42" fill="#333333"/>
+    <text x="185" y="309" fill="#FFFFFF">footer · 3 colonnes</text>
+  </g>
+</svg>
