@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 326" width="210" height="326">
+  <title>Structure filaire d'une page sur tablette</title>
+  <rect x="0.5" y="0.5" width="209" height="325" fill="#F1F1F1" stroke="#333333"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle">
+    <!-- header -->
+    <rect x="0" y="0" width="210" height="40" fill="#333333"/>
+    <text x="105" y="25" fill="#FFFFFF">header · h1</text>
+    <!-- nav sur une ou deux lignes -->
+    <rect x="0" y="40" width="210" height="48" fill="#666666"/>
+    <rect x="0" y="40" width="64" height="24" fill="#027A4C"/>
+    <path d="M0 64 H210" stroke="#888888"/>
+    <text x="137" y="56" fill="#FFFFFF">nav</text>
+    <text x="105" y="80" fill="#FFFFFF">(1 à 2 lignes)</text>
+    <!-- section -->
+    <rect x="10" y="100" width="190" height="52" fill="#FFFFFF" stroke="#999999"/>
+    <text x="105" y="122" font-weight="bold" fill="#222222">section#first</text>
+    <text x="105" y="140" fill="#222222">h2 + p + figure</text>
+    <!-- articles sur 2 colonnes -->
+    <rect x="10" y="164" width="92" height="50" fill="#FFFFFF" stroke="#999999"/>
+    <rect x="108" y="164" width="92" height="50" fill="#FFFFFF" stroke="#999999"/>
+    <rect x="10" y="222" width="92" height="40" fill="#FFFFFF" stroke="#999999"/>
+    <text x="56" y="193" fill="#222222">article</text>
+    <text x="154" y="193" fill="#222222">article</text>
+    <text x="56" y="246" fill="#222222">article</text>
+    <!-- aside -->
+    <rect x="10" y="272" width="190" height="22" fill="#FFFFFF" stroke="#999999" stroke-dasharray="4 3"/>
+    <text x="105" y="287" fill="#222222">aside#last</text>
+    <!-- footer -->
+    <rect x="0" y="302" width="210" height="24" fill="#333333"/>
+    <text x="105" y="318" fill="#FFFFFF">footer</text>
+  </g>
+</svg>

@@ -1,0 +1,94 @@
+=======================================================================
+ ePortfolio - TEMPLATE HTML5 / CSS3 (version 2)
+ SAÉ14 - BUT Réseaux et Télécommunications
+=======================================================================
+Ce fichier est un mode d'emploi pour toi : ne le publie pas sur l'hébergeur.
+
+
+1. CONTENU DU DOSSIER
+-----------------------------------------------------------------------
+index.html ............. Accueil
+eportfolio.html ........ L'ePortfolio : définition, objectifs, contexte
+about-me.html .......... About me (en anglais, lang="en")
+parcours.html .......... Parcours pré-BUT et BUT (en français)
+aspect-technique.html .. Livrables techniques (plan du site, filaire...)
+mentions-legales.html .. Mentions légales
+
+css/style2.css ......... Feuille de style principale (issue du TP R109)
+css/responsive.css ..... Règles adaptatives (media queries)
+images/ ................ Images SVG (remplaçables)
+medias/ ................ Ta vidéo, ton audio et les sous-titres
+
+
+2. COMMENT COMPLÉTER LE SITE
+-----------------------------------------------------------------------
+Tout ce qui est à compléter est surligné en jaune à l'écran : c'est une
+balise <mark> contenant du texte entre crochets.
+
+  a) Ouvre un fichier dans Notepad++.
+  b) Cherche (Ctrl+F) :  <mark>
+  c) Remplace le texte entre crochets par ton contenu.
+  d) Supprime les balises <mark> et </mark> autour de ton texte.
+  e) Quand plus aucun surlignage jaune n'apparaît, la page est finie.
+
+Le nom "Nourdine ZOUNDRI" est déjà renseigné partout (titre, pied de
+page, balises meta). Pour le modifier : Ctrl+Maj+F (Rechercher dans les
+fichiers) puis Remplacer.
+
+Pense aussi à adapter dans chaque page : <title> et <meta name="description">.
+
+
+3. AJOUTER TA VIDÉO ET TON AUDIO
+-----------------------------------------------------------------------
+Les fichiers ne sont pas fournis. Dépose-les dans medias/ avec ces noms :
+    video-centre-interet.mp4   (MP4 / H.264, moins d'1 minute conseillé)
+    audio-presentation.mp3     (facultatif)
+Les sous-titres se modifient dans medias/sous-titres.vtt.
+Sans fichier audio : supprime le bloc <figure> qui contient <audio>
+dans about-me.html (repéré par un commentaire).
+Utilise tes propres médias ou des médias libres de droits, et cite
+leur source dans les mentions légales.
+
+
+4. REMPLACER LES IMAGES
+-----------------------------------------------------------------------
+images/placeholder.svg est l'image provisoire. Mets ta photo ou ta
+capture dans images/ puis change l'attribut src (et alt) dans le HTML.
+Garde des attributs width et height qui respectent les proportions
+de ta nouvelle image.
+
+
+5. IMAGE MULTI-CLIQUABLE (PLAN DU SITE)
+-----------------------------------------------------------------------
+Dans aspect-technique.html, les zones <area> ont des coordonnées en
+pixels pour une image de 280 x 274 (images/plan-du-site.svg).
+Si tu ajoutes une page ou si tu modifies l'image, recalcule les
+coords="x1,y1,x2,y2" de chaque zone et mets à jour la liste texte.
+
+
+6. MODIFIER LE MENU, LE PIED DE PAGE OU LES COULEURS
+-----------------------------------------------------------------------
+Le bloc <header> (menu) et le bloc <footer> sont identiques dans les 6
+pages : toute modification doit être recopiée dans chaque fichier.
+Seul l'attribut aria-current="page" change de lien selon la page.
+
+Les couleurs et la police sont des variables en haut de css/style2.css
+(section "Charte graphique"). Si tu les changes, mets aussi à jour le
+tableau "Charte graphique" de aspect-technique.html.
+
+
+7. AVANT DE RENDRE
+-----------------------------------------------------------------------
+[ ] Plus aucun surlignage jaune sur les 6 pages
+[ ] Vidéo, audio et sous-titres ajoutés et fonctionnels
+[ ] Tous les liens fonctionnent (menu, pied de page, image cliquable)
+[ ] Livrables de la page Aspect technique complétés (captures, Gantt...)
+[ ] Site publié sur eohost.com, tous les fichiers envoyés en gardant
+    l'arborescence (css/, images/, medias/)
+[ ] Validation HTML5 : cliquer sur le badge HTML5 de CHAQUE page
+    (le badge utilise l'adresse de la page en ligne : il ne fonctionne
+    qu'une fois le site publié)
+[ ] Validation CSS3 : cliquer sur le badge CSS3
+[ ] Test responsive (F12 puis Ctrl+Maj+M) et rapport GTmetrix
+[ ] Fichiers enregistrés en UTF-8 (Notepad++ : menu Encodage)
+[ ] Aucun JavaScript ni bibliothèque externe (contrainte du sujet)

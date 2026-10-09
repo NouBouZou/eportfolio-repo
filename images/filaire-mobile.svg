@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 340" width="140" height="340">
+  <title>Structure filaire d'une page sur mobile</title>
+  <rect x="0.5" y="0.5" width="139" height="339" fill="#F1F1F1" stroke="#333333"/>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="11" text-anchor="middle">
+    <!-- header -->
+    <rect x="0" y="0" width="140" height="40" fill="#333333"/>
+    <text x="70" y="24" fill="#FFFFFF">header · h1</text>
+    <!-- nav : 1 lien pleine largeur puis 2 colonnes -->
+    <rect x="0" y="40" width="140" height="22" fill="#027A4C"/>
+    <text x="70" y="55" fill="#FFFFFF">nav · lien 1</text>
+    <g fill="#666666" stroke="#888888">
+      <rect x="0" y="62" width="70" height="22"/>
+      <rect x="70" y="62" width="70" height="22"/>
+      <rect x="0" y="84" width="70" height="22"/>
+      <rect x="70" y="84" width="70" height="22"/>
+    </g>
+    <g fill="#FFFFFF">
+      <text x="35" y="77">lien</text>
+      <text x="105" y="77">lien</text>
+      <text x="35" y="99">lien</text>
+      <text x="105" y="99">lien</text>
+    </g>
+    <!-- section -->
+    <rect x="8" y="116" width="124" height="44" fill="#FFFFFF" stroke="#999999"/>
+    <text x="70" y="135" font-weight="bold" fill="#222222">section#first</text>
+    <text x="70" y="151" fill="#222222">h2 + p + figure</text>
+    <!-- articles sur 1 colonne -->
+    <rect x="8" y="170" width="124" height="34" fill="#FFFFFF" stroke="#999999"/>
+    <rect x="8" y="210" width="124" height="34" fill="#FFFFFF" stroke="#999999"/>
+    <rect x="8" y="250" width="124" height="34" fill="#FFFFFF" stroke="#999999"/>
+    <g fill="#222222">
+      <text x="70" y="191">article</text>
+      <text x="70" y="231">article</text>
+      <text x="70" y="271">article</text>
+    </g>
+    <!-- aside -->
+    <rect x="8" y="292" width="124" height="20" fill="#FFFFFF" stroke="#999999" stroke-dasharray="4 3"/>
+    <text x="70" y="306" fill="#222222">aside#last</text>
+    <!-- footer -->
+    <rect x="0" y="318" width="140" height="22" fill="#333333"/>
+    <text x="70" y="333" fill="#FFFFFF">footer</text>
+  </g>
+</svg>

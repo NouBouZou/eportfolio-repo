@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   responsive.css - règles adaptatives (Responsive Web Design)
+   À charger APRÈS style2.css : ces règles modifient la mise en page de base.
+
+   Points de rupture :
+   - plus de 1280 px  : très grand écran
+   - 1025 à 1280 px   : ordinateur (mise en page de base de style2.css)
+   - 601 à 1024 px    : tablette
+   - 600 px et moins  : mobile
+   ========================================================================== */
+
+
+/* --------------------------------------------------------------------------
+   Très grand écran : plus de 1280 px
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 1281px)
+{
+  main
+  {
+    max-width: 1200px;
+  }
+
+  header h1
+  {
+    font-size: 2.1rem;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Tablette : 1024 px et moins
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 1024px)
+{
+  header nav ul li a
+  {
+    padding: 12px 14px;
+  }
+
+  /* cartes sur 2 colonnes */
+  .cartes > li
+  {
+    width: 48.5%;
+    margin: 0 3% 20px 0;
+  }
+
+  .cartes > li:nth-child(3n)
+  {
+    margin-right: 3%;
+  }
+
+  .cartes > li:nth-child(2n)
+  {
+    margin-right: 0;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Mobile : 600 px et moins
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 600px)
+{
+  /* en-tête et pied de page défilent avec la page : plus de place pour lire */
+  header, footer
+  {
+    position: static;
+  }
+
+  [id]
+  {
+    scroll-margin-top: 0;
+  }
+
+  main
+  {
+    padding: 0 14px 14px 14px;
+  }
+
+  header h1
+  {
+    height: auto;
+    padding: 16px 12px;
+    line-height: 1.3;
+    font-size: 1.5rem;
+    white-space: normal;
+  }
+
+  /* menu sur 2 colonnes, « Accueil » sur toute la largeur */
+  header nav ul li
+  {
+    flex: 1 1 50%;
+    border-right: none;
+    border-bottom: 1px solid var(--couleur-bordure);
+  }
+
+  header nav ul li:first-child
+  {
+    flex-basis: 100%;
+  }
+
+  header nav ul li:last-child
+  {
+    margin-left: 0;
+  }
+
+  h2, section#first.banniere h2
+  {
+    font-size: 1.4rem;
+  }
+
+  section#first.banniere
+  {
+    margin-top: 20px;
+    padding: 18px;
+  }
+
+  figure.portrait, figure.plan
+  {
+    float: none;
+    width: auto;
+    margin: 0 0 16px 0;
+  }
+
+  /* cartes sur 1 colonne */
+  .cartes > li, .cartes > li:nth-child(2n), .cartes > li:nth-child(3n)
+  {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  footer ul
+  {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer ul li
+  {
+    width: 100%;
+  }
+
+  footer ul li:first-child, footer ul li:last-child
+  {
+    text-align: center;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Écran peu haut (téléphone en paysage) : en-tête et pied de page non fixes
+   -------------------------------------------------------------------------- */
+@media screen and (max-height: 600px)
+{
+  header, footer
+  {
+    position: static;
+  }
+
+  [id]
+  {
+    scroll-margin-top: 0;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   Impression
+   -------------------------------------------------------------------------- */
+@media print
+{
+  header, footer
+  {
+    position: static;
+  }
+
+  header nav, aside#last
+  {
+    display: none;
+  }
+
+  body
+  {
+    background-color: white;
+  }
+}

@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aspect technique de l'ePortfolio de Nourdine ZOUNDRI : plan du site, structure filaire, arborescence, charte graphique, responsive design, performances et bilan.">
+  <meta name="author" content="Nourdine ZOUNDRI">
+  <title>Aspect technique – ePortfolio de Nourdine ZOUNDRI</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+
+  <header>
+    <h1>ePortfolio de Nourdine ZOUNDRI</h1>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a class="first" href="index.html">Accueil</a></li>
+        <li><a href="eportfolio.html">ePortfolio</a></li>
+        <li><a href="about-me.html" lang="en" hreflang="en">About me</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="aspect-technique.html" aria-current="page">Aspect technique</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenu">
+
+    <section id="first">
+      <h2>Aspect technique</h2>
+      <p>Cette page rassemble les livrables techniques de la SAÉ14 : comment le site a été conçu, testé et mené à bien.</p>
+      <nav class="sommaire" aria-label="Sommaire de la page">
+        <ol>
+          <li><a href="#plan">Plan du site</a></li>
+          <li><a href="#filaire">Structure filaire</a></li>
+          <li><a href="#arborescence">Arborescence physique</a></li>
+          <li><a href="#architecture">Architecture des pages et charte graphique</a></li>
+          <li><a href="#rwd">Illustration du responsive design</a></li>
+          <li><a href="#performances">Performances web</a></li>
+          <li><a href="#problemes">Problèmes rencontrés et solutions</a></li>
+          <li><a href="#gestion">Gestion de projet</a></li>
+          <li><a href="#bilan">Bilan global de la SAÉ</a></li>
+        </ol>
+      </nav>
+    </section>
+
+    <!-- ===================== 1. PLAN DU SITE ===================== -->
+    <section id="plan">
+      <h2>Plan du site</h2>
+      <figure class="plan">
+        <img src="images/plan-du-site.svg" width="280" height="274" usemap="#carte-site" alt="Plan du site : la page d'accueil et ses cinq pages (ePortfolio, About me, Parcours, Aspect technique, Mentions légales). Chaque zone mène à la page correspondante.">
+        <map name="carte-site">
+          <area shape="rect" coords="10,10,190,42" href="index.html" alt="Accueil">
+          <area shape="rect" coords="50,62,270,94" href="eportfolio.html" alt="ePortfolio">
+          <area shape="rect" coords="50,104,270,136" href="about-me.html" alt="About me" lang="en" hreflang="en">
+          <area shape="rect" coords="50,146,270,178" href="parcours.html" alt="Parcours">
+          <area shape="rect" coords="50,188,270,220" href="aspect-technique.html" alt="Aspect technique">
+          <area shape="rect" coords="50,230,270,262" href="mentions-legales.html" alt="Mentions légales">
+        </map>
+        <figcaption>Image multi-cliquable : cliquez sur une page pour l'atteindre directement.</figcaption>
+      </figure>
+      <p>Le plan du site aide les visiteurs, et les moteurs de recherche, à trouver tout le contenu. Voici la même information en version texte :</p>
+      <ul>
+        <li><a href="index.html">Accueil</a>
+          <ul>
+            <li><a href="eportfolio.html">ePortfolio</a></li>
+            <li><a href="about-me.html" lang="en" hreflang="en">About me</a></li>
+            <li><a href="parcours.html">Parcours</a></li>
+            <li><a href="aspect-technique.html">Aspect technique</a></li>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== 2. STRUCTURE FILAIRE ===================== -->
+    <section id="filaire">
+      <h2>Structure filaire</h2>
+      <p>Toutes les pages partagent la même structure, qui s'adapte à la largeur de l'écran : en-tête et menu, contenu, bloc de validation puis pied de page.</p>
+      <ul class="filaires">
+        <li>
+          <figure>
+            <img src="images/filaire-ordinateur.svg" width="370" height="326" alt="Schéma filaire sur ordinateur : en-tête, menu sur une ligne, une section, trois articles côte à côte, bloc de validation et pied de page à trois colonnes.">
+            <figcaption>Ordinateur (plus de 1024 px)</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/filaire-tablette.svg" width="210" height="326" alt="Schéma filaire sur tablette : menu sur une ou deux lignes, articles répartis sur deux colonnes.">
+            <figcaption>Tablette (601 à 1024 px)</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/filaire-mobile.svg" width="140" height="340" alt="Schéma filaire sur mobile : menu sur deux colonnes, articles empilés sur une colonne.">
+            <figcaption>Mobile (600 px et moins)</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== 3. ARBORESCENCE ===================== -->
+    <section id="arborescence">
+      <h2>Arborescence physique</h2>
+      <p>Organisation des dossiers et des fichiers du site statique :</p>
+<pre><code>racine-du-site/
+├── index.html
+├── eportfolio.html
+├── about-me.html
+├── parcours.html
+├── aspect-technique.html
+├── mentions-legales.html
+├── css/
+│   ├── style2.css
+│   └── responsive.css
+├── images/
+│   ├── favicon.svg
+│   ├── placeholder.svg
+│   ├── badge-html5.svg
+│   ├── badge-css3.svg
+│   ├── plan-du-site.svg
+│   ├── filaire-ordinateur.svg
+│   ├── filaire-tablette.svg
+│   └── filaire-mobile.svg
+└── medias/
+    ├── video-centre-interet.mp4
+    ├── audio-presentation.mp3
+    └── sous-titres.vtt</code></pre>
+      <p><mark>[À compléter : mettre à jour cet arbre si vous ajoutez, renommez ou supprimez des fichiers.]</mark></p>
+    </section>
+
+    <!-- ===================== 4. ARCHITECTURE ET CHARTE GRAPHIQUE ===================== -->
+    <section id="architecture">
+      <h2>Architecture des pages et charte graphique</h2>
+
+      <h3>Architecture des pages</h3>
+      <figure class="tableau">
+        <table>
+          <caption>Balises sémantiques HTML5 utilisées</caption>
+          <thead>
+            <tr>
+              <th scope="col">Balise</th>
+              <th scope="col">Rôle dans les pages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">header</th><td>Titre du site (h1) et menu de navigation</td></tr>
+            <tr><th scope="row">nav</th><td>Menu principal et sommaire de cette page</td></tr>
+            <tr><th scope="row">main</th><td>Contenu propre à chaque page</td></tr>
+            <tr><th scope="row">section</th><td>Grande partie thématique, introduite par un titre h2</td></tr>
+            <tr><th scope="row">article</th><td>Carte autonome : présentation d'une page ou d'un contenu</td></tr>
+            <tr><th scope="row">figure, figcaption</th><td>Images, vidéos, tableaux et schémas légendés</td></tr>
+            <tr><th scope="row">aside</th><td>Bloc complémentaire : badges de validation W3C</td></tr>
+            <tr><th scope="row">footer</th><td>Droits, mentions légales et plan du site</td></tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <h3>Adaptation à la taille de l'écran</h3>
+      <figure class="tableau">
+        <table>
+          <caption>Mise en page selon la largeur d'écran</caption>
+          <thead>
+            <tr>
+              <th scope="col">Format</th>
+              <th scope="col">Largeur d'écran</th>
+              <th scope="col">Mise en page</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Très grand écran</th>
+              <td>plus de 1280 px</td>
+              <td>Contenu centré sur 1200 px au maximum, cartes sur trois colonnes.</td>
+            </tr>
+            <tr>
+              <th scope="row">Ordinateur</th>
+              <td>1025 à 1280 px</td>
+              <td>Contenu sur 1100 px au maximum, menu sur une ligne, cartes sur trois colonnes, en-tête et pied de page toujours visibles.</td>
+            </tr>
+            <tr>
+              <th scope="row">Tablette</th>
+              <td>601 à 1024 px</td>
+              <td>Menu sur une ou deux lignes, cartes sur deux colonnes.</td>
+            </tr>
+            <tr>
+              <th scope="row">Mobile</th>
+              <td>600 px et moins</td>
+              <td>Menu sur deux colonnes, cartes sur une colonne, en-tête et pied de page qui défilent avec la page.</td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+      <h3>Charte graphique</h3>
+      <figure class="tableau">
+        <table>
+          <caption>Couleurs et typographie du site</caption>
+          <thead>
+            <tr>
+              <th scope="col">Élément</th>
+              <th scope="col">Valeur</th>
+              <th scope="col">Aperçu</th>
+              <th scope="col">Utilisation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Gris foncé</th><td>#333333</td><td class="ech-entete"></td><td>En-tête et pied de page</td></tr>
+            <tr><th scope="row">Gris moyen</th><td>#666666</td><td class="ech-menu"></td><td>Barre de navigation</td></tr>
+            <tr><th scope="row">Vert</th><td>#04AA6D</td><td class="ech-accent"></td><td>Filets, page en cours, cartes</td></tr>
+            <tr><th scope="row">Vert foncé</th><td>#027A4C</td><td class="ech-accent-fonce"></td><td>Liens, onglet Accueil, boutons</td></tr>
+            <tr><th scope="row">Gris clair</th><td>#DDDDDD</td><td class="ech-survol"></td><td>Survol des liens du menu</td></tr>
+            <tr><th scope="row">Fond de page</th><td>#F1F1F1</td><td class="ech-fond"></td><td>Arrière-plan des pages</td></tr>
+            <tr><th scope="row">Texte</th><td>#222222</td><td class="ech-texte"></td><td>Texte courant</td></tr>
+            <tr><th scope="row">Bordures</th><td>#BBBBBB</td><td class="ech-bordure"></td><td>Tableaux, cartes, séparateurs</td></tr>
+            <tr><th scope="row">Police</th><td>Arial, Helvetica, sans-serif</td><td>Aa</td><td>Tout le site</td></tr>
+          </tbody>
+        </table>
+      </figure>
+    </section>
+
+    <!-- ===================== 5. ILLUSTRATION RWD ===================== -->
+    <section id="rwd">
+      <h2>Illustration du responsive design</h2>
+      <p><mark>[À compléter : indiquez l'outil utilisé pour tester le site (par exemple Responsive Checker, Responsinator ou les outils de développement du navigateur) et remplacez les images ci-dessous par vos captures d'écran.]</mark></p>
+      <ul class="filaires">
+        <li>
+          <figure>
+            <img src="images/placeholder.svg" width="320" height="180" alt="[Capture d'écran du site sur mobile]">
+            <figcaption>Mobile (<mark>[largeur testée]</mark>)</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/placeholder.svg" width="320" height="180" alt="[Capture d'écran du site sur tablette]">
+            <figcaption>Tablette (<mark>[largeur testée]</mark>)</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="images/placeholder.svg" width="320" height="180" alt="[Capture d'écran du site sur ordinateur]">
+            <figcaption>Ordinateur (<mark>[largeur testée]</mark>)</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== 6. PERFORMANCES ===================== -->
+    <section id="performances">
+      <h2>Performances web</h2>
+      <figure>
+        <img src="images/placeholder.svg" width="800" height="450" alt="[Capture d'écran du rapport GTmetrix]">
+        <figcaption><mark>[Rapport GTmetrix du site : remplacez l'image par votre capture.]</mark></figcaption>
+      </figure>
+      <figure class="tableau">
+        <table>
+          <caption>Résultats de l'analyse GTmetrix</caption>
+          <thead>
+            <tr>
+              <th scope="col">Indicateur</th>
+              <th scope="col">Résultat</th>
+              <th scope="col">Commentaire</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Note globale</th>
+              <td><mark>[Note]</mark></td>
+              <td><mark>[Analyse]</mark></td>
+            </tr>
+            <tr>
+              <th scope="row">Temps de chargement</th>
+              <td><mark>[Valeur]</mark></td>
+              <td><mark>[Analyse]</mark></td>
+            </tr>
+            <tr>
+              <th scope="row">Optimisations réalisées</th>
+              <td><mark>[Liste]</mark></td>
+              <td><mark>[Effet obtenu]</mark></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    </section>
+
+    <!-- ===================== 7. PROBLÈMES ET SOLUTIONS ===================== -->
+    <section id="problemes">
+      <h2>Problèmes rencontrés et solutions</h2>
+      <figure class="tableau">
+        <table>
+          <caption>Synthèse des difficultés et des solutions apportées</caption>
+          <thead>
+            <tr>
+              <th scope="col">Problème rencontré</th>
+              <th scope="col">Cause</th>
+              <th scope="col">Solution apportée</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><mark>[Problème 1]</mark></td>
+              <td><mark>[Cause]</mark></td>
+              <td><mark>[Solution]</mark></td>
+            </tr>
+            <tr>
+              <td><mark>[Problème 2]</mark></td>
+              <td><mark>[Cause]</mark></td>
+              <td><mark>[Solution]</mark></td>
+            </tr>
+            <tr>
+              <td><mark>[Problème 3]</mark></td>
+              <td><mark>[Cause]</mark></td>
+              <td><mark>[Solution]</mark></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+    </section>
+
+    <!-- ===================== 8. GESTION DE PROJET ===================== -->
+    <section id="gestion">
+      <h2>Gestion de projet</h2>
+
+      <h3>Organisation avec Trello</h3>
+      <figure>
+        <img src="images/placeholder.svg" width="800" height="450" alt="[Capture d'écran du tableau Trello du projet]">
+        <figcaption><mark>[Capture du tableau Trello : listes, cartes, répartition des tâches.]</mark></figcaption>
+      </figure>
+
+      <h3>Diagramme de Gantt final</h3>
+      <figure>
+        <img src="images/placeholder.svg" width="800" height="450" alt="[Diagramme de Gantt final du projet]">
+        <figcaption><mark>[Diagramme de Gantt final : tâches, durées et jalons.]</mark></figcaption>
+      </figure>
+    </section>
+
+    <!-- ===================== 9. BILAN ===================== -->
+    <section id="bilan">
+      <h2>Bilan global de la SAÉ</h2>
+
+      <h3>Les objectifs ont-ils été atteints ?</h3>
+      <p><mark>[À compléter : comparez le résultat avec le cahier des charges.]</mark></p>
+
+      <h3>Les moyens étaient-ils adaptés ?</h3>
+      <p><mark>[À compléter : outils, temps, ressources, accompagnement.]</mark></p>
+
+      <h3>Ce que j'ai bien fait et ce que je ferais mieux</h3>
+      <ul>
+        <li><mark>[À compléter : un point fort]</mark></li>
+        <li><mark>[À compléter : un point à améliorer, et comment]</mark></li>
+      </ul>
+    </section>
+
+    <aside id="last">
+      <h2>Validation W3C</h2>
+      <p>
+        <a href="https://validator.w3.org/check?uri=referer"><img src="images/badge-html5.svg" width="88" height="31" alt="Valider le code HTML5 de cette page avec le validateur du W3C"></a>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer"><img src="images/badge-css3.svg" width="88" height="31" alt="Valider les feuilles de style CSS3 de cette page avec le validateur du W3C"></a>
+      </p>
+    </aside>
+
+  </main>
+
+  <footer>
+    <ul>
+      <li>&copy; 2026 Nourdine ZOUNDRI</li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="aspect-technique.html#plan">Plan du site</a></li>
+    </ul>
+  </footer>
+
+</body>
+</html>
