@@ -86,9 +86,18 @@ tableau "Charte graphique" de aspect-technique.html.
 [ ] Site publié sur eohost.com, tous les fichiers envoyés en gardant
     l'arborescence (css/, images/, medias/)
 [ ] Validation HTML5 : cliquer sur le badge HTML5 de CHAQUE page
-    (le badge utilise l'adresse de la page en ligne : il ne fonctionne
-    qu'une fois le site publié)
-[ ] Validation CSS3 : cliquer sur le badge CSS3
+[ ] Validation CSS3 : cliquer sur le badge CSS3 (il valide la page avec
+    ses deux feuilles de style)
+
+    Les badges contiennent l'adresse complète de la page en ligne (et non
+    "referer", que les navigateurs tronquent). Elle pointe actuellement
+    vers GitHub Pages : https://noubouzou.github.io/eportfolio-repo/
+    En publiant sur eohost.com, remplace-la dans les 6 pages
+    (Ctrl+Maj+F dans Notepad++, "Rechercher dans les fichiers") :
+        noubouzou.github.io%2Feportfolio-repo
+    par l'adresse de ton site eohost, sans "https://" ni "/" final
+    et avec chaque "/" écrit %2F (ex. : domaine.tld%2Fdossier).
+    Les badges n'ont aucun effet tant que la page n'est pas en ligne.
 [ ] Test responsive (F12 puis Ctrl+Maj+M) et rapport GTmetrix
 [ ] Fichiers enregistrés en UTF-8 (Notepad++ : menu Encodage)
 [ ] Aucun JavaScript ni bibliothèque externe (contrainte du sujet)
